@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAeroportoTable extends Migration
+class Aeronave extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAeroportoTable extends Migration
      */
     public function up()
     {
-        Schema::create('aeroportos', function (Blueprint $table) {
+        Schema::create('aeronaves', function (Blueprint $table) {
             $table->id();
             $table->string('name', 128);
             $table->timestamp('updated_at')->nullable();
@@ -28,6 +28,6 @@ class CreateAeroportoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aeroportos');
+        Schema::dropIfExists('aeronaves');
     }
 }

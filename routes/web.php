@@ -18,6 +18,14 @@ Route::group(['middleware' => 'web'], function(){
     Route::get('/', 'HomeController@index');
     Auth::routes();
     Route::get('/home', 'HomeController@index')->name('home');
-});
 
-Route::get('/aeroportos', 'Aeroporto@index');
+    Route::get('/aeroportos', 'Aeroporto@index')->name('aeroporto.index');
+    Route::get('/aeroportos/create', 'Aeroporto@create')->name('aeroporto.create');
+    Route::get('/aeroportos/edite', 'Aeroporto@edite')->name('aeroporto.edite');
+    Route::post('/aeroportos', 'Aeroporto@store')->name('aeroporto.store');
+
+    Route::get('/aeronaves', 'Aeronave@index')->name('aeronave.index');
+    Route::get('/aeronaves/create', 'Aeronave@create')->name('aeronave.create');
+    Route::get('/aeronaves/edite', 'Aeronave@edite')->name('aeronave.edite');
+    Route::post('/aeronaves', 'Aeronave@store')->name('aeronave.store');
+});
