@@ -28,4 +28,9 @@ Route::group(['middleware' => 'web'], function(){
     Route::get('/aeronaves/create', 'Aeronave@create')->name('aeronave.create');
     Route::get('/aeronaves/edite', 'Aeronave@edite')->name('aeronave.edite');
     Route::post('/aeronaves', 'Aeronave@store')->name('aeronave.store');
+
+    Route::get('/voos', 'Voo@index')->name('voo.index');
+    Route::get('/voos/create', 'Voo@create')->name('voo.create');
+    Route::get('/voos/edite', 'Voo@edite')->name('voo.edite');
+    Route::post('/voos', 'Voo@store')->name('voo.store');
 });
