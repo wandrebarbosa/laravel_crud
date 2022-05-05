@@ -24,9 +24,11 @@ class Voo extends Controller
         return view('voo.create', compact("aeronaves", "aeropotos"));
     }
 
-    public function edite()
+    public function edite(ModelVoo $voo)
     {
-        return view('voo.edite');
+        $aeropotos = ModelAeroporto::get();
+        $aeronaves = ModelAeronave::get();
+        return view('voo.edite', compact('voo', 'aeropotos', 'aeronaves'));
     }
 
     public function store(Request $request)
@@ -34,4 +36,15 @@ class Voo extends Controller
         ModelVoo::create($request->toArray());
         return redirect()->route('voo.index');
     }
+
+    public function update(ModelVoo $voo, Request $request)
+    {
+        $voo->codigo=$request->codigo;
+        $voo->gate=$request->gate;
+        $voo->id_aeronave=$request->id_aeronave;
+        $voo->id_aeroporto=$request->id_aeroporto;
+        $voo->save();
+        return redirect()->route('voo.index');
+    }
 }
+

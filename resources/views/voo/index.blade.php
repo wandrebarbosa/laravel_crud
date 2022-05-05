@@ -24,6 +24,7 @@
                                 <th scope="col">portao</th>
                                 <th scope="col">Aeronave</th>
                                 <th scope="col">Aeroporto</th>
+                                <th scope="col">Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +35,7 @@
                                 <td>{{ $voo->gate }}</td>
                                 <td>{{ $voo->hasAeronave->name }}</td>
                                 <td>{{ $voo->hasAeroporto->name }}</td>
+                                <td><a href="{{ route('voo.edite', $voo->id) }}">Editar</a></td>
                             </tr>
                             @endforeach
                         </tbody>
