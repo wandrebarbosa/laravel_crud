@@ -33,9 +33,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a href="{{route('aeronave.create')}}" class="nav-link"> Aeronaves</a></li>
-                    <li class="nav-item"><a href="{{route('aeroporto.create')}}" class="nav-link">Aeroportos</a></li>
-                    <li class="nav-item"><a href="{{route('voo.create')}}" class="nav-link">Voos</a></li>
+                    <li class="nav-item"><a href="{{route('aeronave.create')}}" class="nav-link"> Aeronaves-criar</a></li>
+                    <li class="nav-item"><a href="{{route('aeronave.index')}}" class="nav-link"> Aeronaves-lita</a></li>
+
+                    <li class="nav-item"><a href="{{route('aeroporto.create')}}" class="nav-link">Aeroportos-criar</a></li>
+                    <li class="nav-item"><a href="{{route('aeroporto.index')}}" class="nav-link">Aeroportos-lista</a></li>
+                    <li class="nav-item"><a href="{{route('voo.create')}}" class="nav-link">Voos-criar</a></li>
+                    <li class="nav-item"><a href="{{route('voo.index')}}" class="nav-link">Voos-lista</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
