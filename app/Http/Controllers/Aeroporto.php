@@ -18,14 +18,21 @@ class Aeroporto extends Controller
         return view('aeroport.create');
     }
 
-    public function edite()
+    public function edite(ModelAeroporto $aeroporto)
     {
-        return view('aeroport.edite');
+        return view('aeroport.edite', compact('aeroporto'));
     }
 
     public function store(Request $request)
     {
         ModelAeroporto::create($request->toArray());
+        return redirect()->route('aeroporto.index');
+    }
+
+    public function update(ModelAeroporto $aeroporto, Request $request)
+    {
+        $aeroporto->name=$request->name;
+        $aeroporto->save();
         return redirect()->route('aeroporto.index');
     }
 }

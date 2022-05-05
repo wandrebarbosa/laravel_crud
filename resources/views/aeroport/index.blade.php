@@ -21,6 +21,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Aeroporto</th>
+                                <th scope="col">Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,6 +29,7 @@
                             <tr>
                                 <th scope="row">1</th>
                                 <td>{{ $aeroporto->name }}</td>
+                                <td><a href="{{ route('aeroporto.edite', $aeroporto->id) }}">Editar</a></td>
                             </tr>
                             @endforeach
                         </tbody>

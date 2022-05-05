@@ -18,14 +18,21 @@ class Aeronave extends Controller
         return view('aeronave.create');
     }
 
-    public function edite()
+    public function edite(ModelAeronave $aeronave)
     {
-        return view('aeronave.edite');
+        return view('aeronave.edite', compact('aeronave'));
     }
 
     public function store(Request $request)
     {
         ModelAeronave::create($request->toArray());
+        return redirect()->route('aeronave.index');
+    }
+
+    public function update(ModelAeronave $aeronave, Request $request)
+    {
+        $aeronave->name=$request->name;
+        $aeronave->save();
         return redirect()->route('aeronave.index');
     }
 }
