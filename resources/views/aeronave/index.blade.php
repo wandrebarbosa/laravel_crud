@@ -20,7 +20,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">nome</th>
+                                <th scope="col">Aeronave</th>
                             </tr>
                         </thead>
                         <tbody>

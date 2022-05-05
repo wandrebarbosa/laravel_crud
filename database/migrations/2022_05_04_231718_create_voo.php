@@ -15,10 +15,10 @@ class CreateVoo extends Migration
     {
         Schema::create('voos', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 128);
+            //$table->string('name', 128);
             $table->string('codigo', 128);
             $table->string('gate', 20);
-            $table->timestamp('hora');
+            //$table->timestamp('hora');
             $table->integer('id_aeronave');
             $table->integer('id_aeroporto');
             $table->timestamp('updated_at')->nullable();

@@ -20,17 +20,20 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">nome</th>
                                 <th scope="col">codigo</th>
                                 <th scope="col">portao</th>
-                                <th scope="col">horario</th>
+                                <th scope="col">Aeronave</th>
+                                <th scope="col">Aeroporto</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($voos as $voo)  
+                            @foreach($voos as $voo)
                             <tr>
                                 <th scope="row">1</th>
-                                <td>{{ $voo->name }}</td>
+                                <td>{{ $voo->codigo }}</td>
+                                <td>{{ $voo->gate }}</td>
+                                <td>{{ $voo->hasAeronave->name }}</td>
+                                <td>{{ $voo->hasAeroporto->name }}</td>
                             </tr>
                             @endforeach
                         </tbody>

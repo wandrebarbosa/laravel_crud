@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Aeroporto as ModelAeroporto;
+use App\Aeronave as ModelAeronave;
 use App\Voo as ModelVoo;
 
 class Voo extends Controller
@@ -10,12 +12,16 @@ class Voo extends Controller
     public function index()
     {
         $voos = ModelVoo::get();
-        return view('voo.index')->with('voos', $voos);
+        $aeropotos = ModelAeroporto::get();
+        $aeronaves = ModelAeronave::get();
+        return view('voo.index', [$aeronaves,$aeropotos])->with('voos', $voos);
     }
 
     public function create()
     {
-        return view('voo.create');
+        $aeropotos = ModelAeroporto::get();
+        $aeronaves = ModelAeronave::get();
+        return view('voo.create', compact("aeronaves", "aeropotos"));
     }
 
     public function edite()
